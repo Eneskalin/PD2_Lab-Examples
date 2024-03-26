@@ -1,6 +1,11 @@
 #include <stdio.h>
-/* X ve y tamsayılarının ortak bölenlerinin en büyüğünü(Ebob) bulan  rescurisive  fonksiyon yazınız 
- Write a rescurisive function that finds the oldest common divisor of integers x and y */
+/* Soru 1:  X ve Y tamsayılarının ortak bölenlerinin en büyüğü (0BEB) , her ikisini de tam bölen tam sayıların 
+en büyüğüdür. X ve Y ta sayılarının OBEB ini bulan ve döndüren bir obeb yineleme (recursive)  
+fonksiyonunu C dilinde yazınız. X ve Y değerleri kullanıcı tarafından girilecektir. 
+
+Question 1: The largest of the common divisors of integers X and Y (0BEB) is the largest of all integers 
+dividing both of them. Write an” obeb” recursive function in C language. X and Y will be entered by 
+users. */
 
  int ebob(int , int);
 

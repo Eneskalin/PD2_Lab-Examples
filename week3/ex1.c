@@ -1,5 +1,6 @@
 #include <stdio.h>
-// Kodun çıktısı nedir
+/*Soru 1: Aşağıda verilen programın çıktısı ne olur.  
+Question 1: Predict the output of following program. */
 
 void fun(int x){
     if(x>0){

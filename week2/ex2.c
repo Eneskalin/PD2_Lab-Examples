@@ -1,6 +1,10 @@
 # include <stdio.h>
- /*N elemanli tam sayi tipinde bir dizide elemanlarin toplamini bulan programi recurisive 
- fonksiyon kullaranark c dilinde yaziniz*/
+ /*Soru 2: N elemanlı tamsayı tipinde bir dizideki elemanların toplamını bulan programı rekürsif 
+fonksiyon kullanarak C dilinde yazınız. Dizi boyutunu ve dizi elemanları kullanıcı tarafından 
+girilecektir.  
+
+Question 2: Enter the program that finds the sum of the elements in an array of integers of N type 
+using the recursive function in C. The array size and array elements will be entered by the user. */
  int sumfunc(int a[],int x);
 
  void main(){

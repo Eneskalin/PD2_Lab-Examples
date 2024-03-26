@@ -1,5 +1,8 @@
 #include <stdio.h>
-/*Girilen bir dizideki en büyük eleman sayısını bulan recurisive fonksion yazin*/
+/*Soru 3: Girilen dizideki en büyük elemanı rekürsif olarak bulan programı C dilinde yazınız .  
+
+Question 3: Create an array of an integer type. Write the program in C, which finds the greatest 
+element in this series as recursive.*/
 
 int maxnumber(int array[],int x,int max);
 
