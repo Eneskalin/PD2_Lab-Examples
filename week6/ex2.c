@@ -28,6 +28,5 @@ int main(){
 
     printf("Max value is %d",max);
     
-
-    
+    free(ptr);
 }

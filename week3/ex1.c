@@ -10,7 +10,7 @@ void fun(int x){
     }
 }
 //step 1 fun(4)=>fun(3); printf x ,fun(2)
-//step 2 fun(3) =>fun(2);printd x ,fun(1)
+//step 2 fun(3) =>fun(2);printf x ,fun(1)
 //step 3 fun(2) => fun(1) ; printf x ,fun(0)
 //step 4 fun(1) => fun(0)
 

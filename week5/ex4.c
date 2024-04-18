@@ -16,3 +16,21 @@ int main(){
 
 
 }
+
+/*
+    #include <stdio.h>
+
+int terstenYazdir(int *p1,int boyut){
+	int i=0;
+	for(i=boyut-1;i>=0;i--)
+		printf("%d\n",*(p1+i));
+		
+	
+}
+int main(){
+	int sayilar[5] = {1,2,3,4,5};
+	terstenYazdir(sayilar,5);
+}
+
+
+*/

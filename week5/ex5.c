@@ -32,3 +32,45 @@ int main(){
     
 
 }
+
+/*
+#include <stdio.h>
+
+int main(){
+	
+	
+ 	char message[50];
+    int harfSayilari[26] = {0};
+    printf("Kelimeyi Girebilirsiniz: ");
+    
+    scanf("%s", message);
+	
+	
+	 for (int i = 0; message[i] != '\0'; i++) {
+        
+		char karakter = message[i];
+        
+        //if (karakter >= 'A' && karakter <= 'Z') {
+        if(karakter>=65 && karakter<=90){ //ASCII CODE : A=> 65 Z=>90
+		
+            // Harfin ASCII degeri kullanilarak indeks belirlenir
+            //int index = karakter - 'A'; // veya asagidaki yontem
+			int index = karakter -65 ;
+			
+            // Harfin tekrar sayisini artir
+            harfSayilari[index]++;
+        }
+    }
+
+    // harfSayilari dizisini ekrana yazd�r
+    for (int i = 0; i < 26; i++) {
+        if (harfSayilari[i] > 0) {
+            char harf = 'A' + i;
+            printf("%c: %d Adet\n", harf, harfSayilari[i]);
+        }
+    }
+}
+
+
+
+*/
