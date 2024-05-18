@@ -28,8 +28,7 @@ int main(){
     {
         menugoster();
         scanf("%d",&secim);
-        switch (secim)
-        {
+        switch (secim){
         case 0: temizle(&liste);
         printf("Sistemden Cikiliyor");
         exit(EXIT_SUCCESS);

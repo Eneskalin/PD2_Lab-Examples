@@ -79,7 +79,7 @@ void addProduct() {
 void listProducts() {
     Product *current = root;
     int counter = 1;
-
+4
     while (current != NULL) {
         printf("%d. Product: Name: %s     Barcode: %d  Price: %d\n", counter++, current->name, current->barcode, current->price);
         current = current->next;

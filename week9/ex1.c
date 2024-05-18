@@ -70,7 +70,7 @@ void listrecord(void);
 void updaterecord(void);
 void deleterecord(void);
 void calculateaverage(void);
-void bestStudent(void   );
+void bestStudent(void);
 
 studentrecord *root,*newstudent,*beforestudent;
 studentrecord **ptr=&root;
@@ -92,7 +92,7 @@ int main(void){
         scanf("%d",&choose);
         switch (choose)
         {
-        case 1:addnewrecord(counter); counter++; break;
+        case 1:addnewrecord(counter);  break;
         case 2:listrecord(); break;
         case 3:updaterecord(); break;
         case 4:deleterecord(); break;
@@ -127,8 +127,9 @@ void addnewrecord(int counter){
         else{
             (*ptr)->next=newstudent;
             newstudent->next=NULL;
+            ptr=&newstudent->next;
         }
-        ptr=&newstudent->next;
+        counter++;
 }
 
 void listrecord(void){
@@ -144,16 +145,19 @@ void listrecord(void){
     {
         printf("Enter student number want to find: ");
         scanf("%d",&searchno);
-        for (int i = 0;temp !=NULL ; i++)
+
+        while (temp != NULL)
         {
-            if (searchno==temp[i].studentno)
+            if (searchno==temp->studentno)
             {
-                printf("%d Student  Student Number: %d  Student Name: %s  Midterm: %d  Final: %d",i+1,ptr[i]->studentno,ptr[i]->studentname,ptr[i]->midtermNote,ptr[i]->finalNote);
-                return;
+                printf(" Student No: %d\n Studentname: %s\n Midterm:%d\n Final:%d\n");
             }
-            printf("The number not found\n");
+            else{
+                printf("Not found\n");
+            }
             
         }
+        
         
     }
     else if (choose==2)
@@ -161,15 +165,15 @@ void listrecord(void){
         printf("Enter student name want to find: ");
         scanf("%s",searchname);
 
-        for (int i = 0; temp[i].next != NULL; i++)
+        while (temp != NULL)
         {
-            if (strcmp(searchname,temp[i].studentname) ==0)
+            if (strcmp(searchname,temp->studentname) ==0)
             {
-                printf("%d Student  Student Number: %d  Student Name: %s  Midterm: %d  Final: %d",i+1,ptr[i]->studentno,ptr[i]->studentname,ptr[i]->midtermNote,ptr[i]->finalNote);
+                printf("Student  Student Number: %d \n Student Name: %s \n Midterm: %d \n Final: %d\n",temp->studentno,temp->studentname,temp->midtermNote,temp->finalNote);
                 return;
                 
             }
-            printf("The name not found\n");
+            printf("Not found\n");
             
         }
         
@@ -186,18 +190,19 @@ void updaterecord(void){
     printf("Enter studentno want to update:");
     scanf("%d",&searchno);
 
-    for (int i = 0; temp[i].next != NULL ; i++)
+    while (temp != NULL)
     {
-        if (temp[i].studentno==searchno)
+    
+        if (temp->studentno==searchno)
         {
             printf("Update Student Number: ");
-            scanf("%d",&temp[i].studentno);
+            scanf("%d",&temp->studentno);
             printf("Update Student Name: ");
-            scanf("%s",temp[i].studentname);
+            scanf("%s",temp->studentname);
             printf("Update Student Midterm result: ");
-            scanf("%d",temp[i].midtermNote);
+            scanf("%d",&temp->midtermNote);
             printf("Update Student Final result: ");
-            scanf("%d",temp[i].finalNote);
+            scanf("%d",&temp->finalNote);
             break;
 
         }
