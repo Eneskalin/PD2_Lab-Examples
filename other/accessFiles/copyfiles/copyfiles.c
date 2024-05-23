@@ -14,7 +14,7 @@ int main(){
     }
     printf("Enter new files name:");
     scanf("%s",destinationFile);
-    FILE *dfile = fopen("destinationFile.txt", "w");
+    FILE *dfile = fopen(destinationFile, "w");
     if (dfile==NULL)
     {
         printf("The file not created\n");
@@ -22,7 +22,7 @@ int main(){
     }
     do
     {
-     ch=getc(dfile);
+     ch=getc(sfile);
      putc(ch,dfile);   
 
     } while (ch !=EOF);
