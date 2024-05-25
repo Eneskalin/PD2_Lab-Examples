@@ -44,6 +44,7 @@ int main(){
 }
 
     fprintf(yazilacakdosya,"Islem sonucu %d",result);
+    fprintf(stdout,"Islemin Sonucu: %d",result);
 
     fclose(yazilacakdosya);
     fclose(okunacakdosya);
