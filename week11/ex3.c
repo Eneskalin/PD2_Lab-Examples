@@ -12,13 +12,13 @@ char name[20];
 double deposit; 
 }; 
 Verilen bilgilere göre aşağıdaki fonksiyonların yazınız. 
-Accordingn to given information solve the questions below. 
-1-Banka müşterilerinden Hesabındaki para miktarı (Depozitoları) sıfırdan az olan kaç müşterinin olduğunu 
-döndüren bir fonksiyon yazınız. Fonksiyonunuzu ana menüden çağırınız.  
-Function prototype: int listIndebtedAccounts(FILE *); 
-1- Write a function having prototype given below that returns how many customers stored in the file 
-whose deposit is less than zero. Call your function from main function within a menu. 
-Function prototype: int listIndebtedAccounts(FILE *); */
+3- Müşterilerinin tüm bilgilerini, hesabı 300'den büyük veya ona eşit olan “list.txt” adında sıralı bir erişim 
+dosyasına aktaran fonksiyonu yazınız. 
+Function prototype: void transferRecords(FILE *); 
+3- Write a function having prototype given below that transfers all information of customers into a 
+sequential access file named “list.txt” whose deposit is greater than or equal to 300 . Call your function 
+from main function within a menu. 
+Function prototype: void transferRecords(FILE *);  */
 
 typedef struct customer
 {
@@ -28,8 +28,7 @@ typedef struct customer
     double deposit;
 }customer;
 
-int listIndebtedAccounts(FILE *);
-
+findMaxDeposit(FILE *);
 int main(){
     FILE *fileptr;
     fopen("musteri.dat","a+");
@@ -38,20 +37,21 @@ int main(){
     
 }
 
-int listIndebtedAccounts(FILE *fileptr){
-    int  counter=0;
-    customer empty={0,"","",0};
+findMaxDeposit(FILE *fileptr){
+    customer empty,max={0,"","",0};
+    fread(&max,sizeof(customer),1,fileptr);
     fseek(fileptr,0,SEEK_SET);
 
     while (!feof(fileptr))
     {
         fread(&empty,sizeof(customer),1,fileptr);
-        if (empty.deposit < 0)
+        if (empty.deposit > max.deposit)
         {
-            counter ++;
+            max=empty;
         }
         
     }
+
+    return max;
     
-    return counter;
 }

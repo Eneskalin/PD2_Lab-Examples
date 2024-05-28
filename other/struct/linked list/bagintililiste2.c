@@ -79,7 +79,7 @@ void addProduct() {
 void listProducts() {
     Product *current = root;
     int counter = 1;
-4
+
     while (current != NULL) {
         printf("%d. Product: Name: %s     Barcode: %d  Price: %d\n", counter++, current->name, current->barcode, current->price);
         current = current->next;
@@ -87,5 +87,18 @@ void listProducts() {
 }
 
 void removeProduct() {
-    // You can implement this function if you want
+    char namefordelete[50];
+    printf("Enter name want to delete: ");
+    scanf("%s",namefordelete);
+    Product *current;
+    while (current != NULL)
+    {
+        if (strcmp(current->next->name,namefordelete)==0)
+        {
+            current->next=current->next->next;
+            
+        }
+        
+    }
+    
 }
