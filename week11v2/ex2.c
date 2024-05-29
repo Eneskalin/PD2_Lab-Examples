@@ -98,6 +98,4 @@ void addnew(FILE *fileptr){
 
     fwrite(&empty,sizeof(student),1,fileptr);
 
-
-
 }
