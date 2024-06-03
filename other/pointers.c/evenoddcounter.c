@@ -12,14 +12,11 @@ Example:
 Input:     Student Number :  25698574 
 Output:  Result: 7 5 9 5 
 4 8 6 2 */
-
-int main() {
-    int array[10],oddcounter=0,evencounter=0;
+void eveodd(int array[]){
+    int oddcounter=0,evencounter=0;
     int *odd=(int *)malloc(sizeof(int)*1);
     int *even=(int *)malloc(sizeof(int)*1);
-    for(int i=0;i<10;i++){
-        scanf("%d",&array[i]);
-    }
+    
     
     for(int i=0;i<10;i++){
         if(array[i]%2!=0){
@@ -42,9 +39,14 @@ int main() {
     for(int i=0;i<evencounter;i++){
         printf("%d",even[i]);
     }
+}
+int main() {
+    int array[10];
     
-    
-
+    for(int i=0;i<10;i++){
+        scanf("%d",&array[i]);
+    }
+    eveodd(array);
 
     return 0;
 }

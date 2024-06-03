@@ -27,7 +27,7 @@ struct Empoloyee{
     node *ptr;
  void list();
  void sort();
-//  void reserve();
+ void reverse();
 
  int main(){
     root=(node *)malloc(sizeof(node));
@@ -40,6 +40,9 @@ struct Empoloyee{
     list();
     sort();
     printf("\n\n\n\n");
+    list();
+    printf("\n\n\n");
+    reverse();
     list();
 
 
@@ -57,7 +60,7 @@ struct Empoloyee{
  void sort(){
     int counter=0;
     ptr=root;
-    node *temp;
+    // node *temp;
 
 
     while (ptr->next != NULL)
@@ -74,10 +77,11 @@ struct Empoloyee{
         {
             if (strcmp(ptr->name,ptr->next->name)>0)
             {
-                strcpy(temp->name,ptr->name);
+                char temp[40];
+                strcpy(temp,ptr->name);
                 strcpy(ptr->name,ptr->next->name);
-                strcpy(ptr->next->name,temp->name);
-                free(temp); 
+                strcpy(ptr->next->name,temp);
+                
             }
 
         }
@@ -86,23 +90,22 @@ struct Empoloyee{
  }
 
 
-//   void reserve(){
-//     int counter;
-//     ptr=root;
-//     node *end,*temp;
-//     while (ptr->next != NULL)
-//     {
-//         counter++;
-//         end=end->next;
-//     }
+void reverse() {
+    if (root == NULL) // Kök düğüm NULL ise hiçbir şey yapma
+        return;
 
-//     for (int i = 0; i < counter/2; i++)
-//     {
-//         temp=ptr;
-//         ptr=end;
-//         end=ptr;
-//         ptr=ptr->next;
-//     }
+    node *prev = NULL;
+    node *current = root;
+    node *next = NULL;
+
+    while (current != NULL) {
+        next = current->next; // Gelecek düğümü sakla
+        current->next = prev; // Şu anki düğümün bağlantısını tersine çevir
+        prev = current; // Önceki düğümü güncelle
+        current = next; // Şu anki düğümü güncelle
+    }
+    root = prev; // Yeni kökü güncelle
+}
     
 
     
