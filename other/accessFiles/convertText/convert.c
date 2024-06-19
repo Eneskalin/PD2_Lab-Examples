@@ -40,9 +40,9 @@ void reserve(FILE *sourceptr){
     {
         return ;   
     }
-    int read;
+    // int read;
     char ch;
-    read=fscanf(sourceptr,"%c",&ch);
+    fscanf(sourceptr,"%c",&ch);
     reserve(sourceptr);
     putchar(ch);
 }

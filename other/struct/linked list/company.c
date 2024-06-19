@@ -90,21 +90,18 @@ struct Empoloyee{
  }
 
 
-void reverse() {
-    if (root == NULL) // Kök düğüm NULL ise hiçbir şey yapma
-        return;
-
-    node *prev = NULL;
-    node *current = root;
-    node *next = NULL;
-
-    while (current != NULL) {
-        next = current->next; // Gelecek düğümü sakla
-        current->next = prev; // Şu anki düğümün bağlantısını tersine çevir
-        prev = current; // Önceki düğümü güncelle
-        current = next; // Şu anki düğümü güncelle
+void reverse(){
+    node *prev=NULL,*next=NULL;
+    while (root != NULL)
+    {
+        next=root->next;
+        root->next=prev;
+        prev=root;
+        root=next;
     }
-    root = prev; // Yeni kökü güncelle
+    root=prev;
+    
+
 }
     
 

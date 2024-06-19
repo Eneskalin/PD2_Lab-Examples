@@ -20,8 +20,8 @@ labs.txt:                          grades.dat
 std_no lab_point                   1.kayıt (1.record)        
 std_no lab_point                   2.kayıt (2.record) 
 std_no lab_point                   3.kayıt (3.record) 
-………                                ..........
-………                                ..........
+...                                ..........
+...                                ..........
 std_no lab_point                   n.kayıt (n.record)
                  
 */
@@ -38,7 +38,7 @@ int main(){
     
     readlab=fopen("labs.txt","r");
     grades=fopen("grades.dat","r+");
-    if (readlab && grades != NULL)
+    if (readlab == NULL || grades == NULL)
     {
         printf("Files are not read!! \n");
         return 0;

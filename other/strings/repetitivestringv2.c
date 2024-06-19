@@ -42,7 +42,7 @@ int main(void){
     str[2]='e';
     str[3]='s';
     int numlen=numberlen(array);
-    str=realloc(str,numlen*1);
+    str=realloc(str,numlen);
     int i=4;
     for(i;i<numlen;i+=4){
         str[i]='e';
